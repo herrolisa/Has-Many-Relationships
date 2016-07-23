@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS comments
   created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT now() NOT NULL,
   updated_at TIMESTAMP WITHOUT TIME ZONE DEFAULT now() NOT NULL,
   user_id integer REFERENCES users(id),
-  comment_id integer REFERENCES posts(id)
+  post_id integer REFERENCES posts(id)
 );
 
 \i scripts/blog_data.sql;
