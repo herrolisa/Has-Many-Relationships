@@ -65,3 +65,9 @@ SELECT users.first_name AS post_author_first_name,
     INNER JOIN posts on comments.post_id = posts.id
     INNER JOIN users on comments.user_id = users.id
     WHERE (comments.body LIKE '%SSL%' OR comments.body LIKE '%firewall%') AND posts.content LIKE '%nemo%';
+
+-- ADDITIONAL QUERIES
+-- 1. Find the post id, post title, and user id of all posts where the post author commented on his/her own post. ( should have 2 results )
+SELECT posts.id, posts.title, posts.user_id FROM posts
+  INNER JOIN comments ON posts.id = comments.post_id
+  WHERE posts.user_id = comments.user_id;
