@@ -23,3 +23,8 @@ SELECT username FROM users
 SELECT posts.title, posts.content, users.username FROM posts
   INNER JOIN users ON posts.user_id = users.id
   WHERE users.created_at < '2015-01-01';
+
+-- 7. Create a query to get the all rows in the comments table, showing post title (aliased as 'Post Title'), and the all the comment's fields
+SELECT *, posts.title AS "Post Title"
+  FROM comments
+  INNER JOIN posts ON comments.post_id = posts.id;
