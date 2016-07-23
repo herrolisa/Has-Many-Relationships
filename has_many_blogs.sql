@@ -38,8 +38,8 @@ CREATE TABLE IF NOT EXISTS comments
   body VARCHAR(510) DEFAULT NULL,
   created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT now() NOT NULL,
   updated_at TIMESTAMP WITHOUT TIME ZONE DEFAULT now() NOT NULL,
-  user_id integer REFERENCES users(id),
-  post_id integer REFERENCES posts(id)
+  post_id integer REFERENCES posts(id),
+  user_id integer REFERENCES users(id)
 );
 
 \i scripts/blog_data.sql;
