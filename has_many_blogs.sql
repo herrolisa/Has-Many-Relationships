@@ -43,3 +43,5 @@ CREATE TABLE IF NOT EXISTS comments
 );
 
 \i scripts/blog_data.sql;
+
+\i joins.sql;
