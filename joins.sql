@@ -71,3 +71,8 @@ SELECT users.first_name AS post_author_first_name,
 SELECT posts.id, posts.title, posts.user_id FROM posts
   INNER JOIN comments ON posts.id = comments.post_id
   WHERE posts.user_id = comments.user_id;
+
+-- 2. Count how many comments have been written on posts that have been created after July 14, 2015 ( should have one result, the value of the count should be 25)
+SELECT COUNT(comments.id) FROM comments
+  INNER JOIN posts ON comments.post_id = posts.id
+  WHERE posts.created_at > '07-14-15';
